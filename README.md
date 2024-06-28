@@ -17,7 +17,7 @@ O objetivo do trabalho é criar um sistema eficiente para substituir os métodos
 
 ## Links
 Link para o sistema: 
-https://remediar.vercel.app/
+https://pco-si-2024-1-p1-tias-remediar.vercel.app/
 
 Api backend: https://remediar.azurewebsites.net/swagger/index.html
 
