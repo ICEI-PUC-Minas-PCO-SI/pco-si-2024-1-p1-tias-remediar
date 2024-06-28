@@ -1,0 +1,81 @@
+
+
+  .estoqueTotal{
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, #F9F9F9 0%, #8ECCE1 100%);
+  }
+
+
+  
+  .content {
+    
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  aside {
+    width: 200px;
+  }
+  
+  .filter {
+    margin-bottom: 10px;
+  }
+  
+  main {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
+  
+  .container {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+  }
+  
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Estilo da barra de rolagem */
+  .scrollbar {
+    height: 17px;
+    background-color: #f2f2f2;
+  }
+  
+  .buttons-div{
+    margin-left: 1000px;
+  }
+
+  .voltar{
+    margin-right: 150px;
+  }

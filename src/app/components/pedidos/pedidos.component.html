@@ -1,0 +1,58 @@
+
+<div class="pedidosRecebidos">
+  <app-header [title]="'Pedidos recebidos'"></app-header>
+    <div class="row filtros justify-content-end">
+            <div class="col-3">
+              <label for="status">Status:</label>
+              <select class="select-custom" id="status" [(ngModel)]="statusSelecionado" (change)="filtraPedidos()">
+                <option value="Todos">Todos</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Concluido">Concluido</option>
+              </select>
+            </div>
+            <!-- <div class="col-4">
+                <label for="date">Período:</label>
+                <input type="date" id="start_date">                <input type="date" id="end_date">
+            </div> -->
+        <div class="filter">
+        </div>
+      </div>
+        <div class="lancamentos">
+          <table>
+            <thead>
+              <tr>
+                <th class="col-1 ">#</th>
+                <th class="col-2 ">Solicitante</th>
+                <th class="col-2">Medicamento</th>
+                <th class="col-1">Quantidade</th>
+                <th class="col-1">Uso Continuo?</th>
+                <th class="col-3">Endereço de Retirada</th>
+                <th class="col-1">Data do Pedido</th>
+                <th class="col-1">Status</th>
+                <th class="col-1"></th>
+              </tr>
+            </thead>
+            <tbody>
+              @for(pedido of pedidosFiltrados; track $index){
+                <tr>
+                  <th>{{$index + 1}}</th>
+                  <td>{{pedido.usuario.nome}} - ({{pedido.usuario.telefone}})</td>
+                  <td>{{pedido.nomeMedicamento}}, {{pedido.dosagem}} {{pedido.unidade}} </td>
+                  <td>{{pedido.quantidade}}</td>
+                  <td>{{pedido.usoContinuo}}</td>
+                  <td>{{pedido.endereco}}</td>
+                  <td>{{pedido.data | date : 'dd/MM/yyyy' }}</td>
+                  <td [ngClass]="{'pedidoConcluido': pedido.statusPedido == 'Concluido', 'pedidoReprovado': pedido.statusPedido == 'Reprovado','bg-warning': pedido.statusPedido == 'Pendente', 'pedidoAprovado':pedido.statusPedido == 'Aprovado'}">{{pedido.statusPedido}}</td>
+                  @if(pedido.statusPedido != "Concluido"){
+                    <td><button class="btn-concluido" (click)="atualizaStatus(pedido)">Concluir</button></td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+    </div>
+    
+    <app-voltar></app-voltar>
+<div>
+    
+</div>
